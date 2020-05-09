@@ -3,8 +3,10 @@
 *.classpath
 *.project
 
+# exclude eclipse stuff and other generated things
 HW??/.settings/
 HW??/test/reports/
+HW??/.gitignore
 
 # Log file
 *.log
