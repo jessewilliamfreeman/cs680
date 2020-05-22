@@ -5,18 +5,18 @@ import java.util.LinkedList;
 
 public class APFSDirectory extends APFSElement {
 	
-	private LinkedList<FSElement> children;
+	private LinkedList<APFSElement> children;
 
 	public APFSDirectory(APFSDirectory parent, String name, LocalDateTime creationTime, String owner) {
 		super(parent, name, 0, creationTime, owner);
-		children = new LinkedList<FSElement>();
+		children = new LinkedList<APFSElement>();
 	}
 	
-	public LinkedList<FSElement> getChildren() {
+	public LinkedList<APFSElement> getChildren() {
 		return this.children;
 	}
 	
-	public void appendChild(FSElement child) {
+	public void appendChild(APFSElement child) {
 		this.children.add(child);
 	}
 	
@@ -28,7 +28,7 @@ public class APFSDirectory extends APFSElement {
 		
 		LinkedList<APFSDirectory> subDirectories = new LinkedList<APFSDirectory>(); 
 		
-		for (FSElement child : children) {
+		for (APFSElement child : children) {
 			if (child.isDirectory()) {
 				subDirectories.add((APFSDirectory) child);
 			}
